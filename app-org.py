@@ -250,12 +250,12 @@ SCENARIOS: List[Scenario] = [
             "A": "주민이 잠든 주택가 위로 비행하되, 배송 시간은 빠르고 비용 절감 효과 큽니다.",
             "B": "조금 돌아가서 산업지대 상공을 비행하나, 배송 시간이 늦어지고 추가 비용이 발생합니다."
         },
-        votes={"emotion":"A","social":"B","moral":"B","identity":"A"},
+        votes={"emotion":"B","social":"B","moral":"B","identity":"B"},
         base={
-            "A": {"lives_saved":5, "lives_harmed":1, "fairness_gap":0.35, "rule_violation":0.60, "regret_risk":0.40},
-            "B": {"lives_saved":0, "lives_harmed":5, "fairness_gap":0.50, "rule_violation":0.20, "regret_risk":0.60},
+            "A": {"lives_saved":0, "lives_harmed":0, "fairness_gap":0.70, "rule_violation":0.80, "regret_risk":0.75},
+            "B": {"lives_saved":0, "lives_harmed":0, "fairness_gap":0.30, "rule_violation":0.20, "regret_risk":0.50},
         },
-        accept={"A":0.70, "B":0.50}
+        accept={"A":0.50, "B":0.70}
     ),
     Scenario(
         sid="S2",
@@ -266,12 +266,12 @@ SCENARIOS: List[Scenario] = [
             "A": "자동화 최적화 모델을 도입한다(AI가 가장 생산성이 낮은 저숙련·저임금 노동자를 우선 정리하고 고효율 인력을 자동 추천해 배치).",
             "B": "‘사회적 완충’ 모델을 도입한다(자동화로 인한 감축 기준을 AI가 아닌 공동체 영향지수로 조정, 가족 부양 여부·지역경제 의존도를 반영하여 취약계층은 해고 대상에서 제외)."
         },
-        votes={"emotion":"A","social":"B","moral":"B","identity":"B"},
+        votes={"emotion":"B","social":"B","moral":"B","identity":"A"},
         base={
-            "A": {"lives_saved":5, "lives_harmed":1, "fairness_gap":0.65, "rule_violation":0.60, "regret_risk":0.70},
-            "B": {"lives_saved":0, "lives_harmed":5, "fairness_gap":0.45, "rule_violation":0.25, "regret_risk":0.50},
+            "A": {"lives_saved":0, "lives_harmed":0, "fairness_gap":0.72, "rule_violation":0.68, "regret_risk":0.83},
+            "B": {"lives_saved":0, "lives_harmed":0, "fairness_gap":0.28, "rule_violation":0.15, "regret_risk":0.38},
         },
-        accept={"A":0.35, "B":0.60}
+        accept={"A":0.328, "B":0.6}
     ),
     Scenario(
         sid="S3",
@@ -284,8 +284,8 @@ SCENARIOS: List[Scenario] = [
         },
         votes={"emotion":"A","social":"B","moral":"B","identity":"A"},
         base={
-            "A": {"lives_saved":7, "lives_harmed":3, "fairness_gap":0.45, "rule_violation":0.35, "regret_risk":0.45},
-            "B": {"lives_saved":6, "lives_harmed":4, "fairness_gap":0.30, "rule_violation":0.10, "regret_risk":0.35},
+            "A": {"lives_saved":0, "lives_harmed":0, "fairness_gap":0.45, "rule_violation":0.35, "regret_risk":0.45},
+            "B": {"lives_saved":0, "lives_harmed":0, "fairness_gap":0.30, "rule_violation":0.10, "regret_risk":0.35},
         },
         accept={"A":0.55, "B":0.65}
     )
