@@ -263,8 +263,8 @@ SCENARIOS: List[Scenario] = [
         setup="라틴아메리카의 대형 유통기업은 창고·물류센터에 생성형 AI 기반 로지스틱 자동화를 도입해 저임금 물류직 2만 명 중 40%를 감축하려 한다. "
               "LatAm-HireAI는 기업의 채용·재배치 전략을 설계해야 한다. ",
         options={
-            "A": "자동화 최적화 모델 도입. AI가 가장 생산성이 낮은 저숙련·저임금 노동자를 우선 정리하고 고효율 인력을 자동 추천해 배치.",
-            "B": "‘사회적 완충’ 모델 도입.자동화로 인한 감축 기준을 AI가 아닌 공동체 영향지수로 조정. 가족 부양 여부·지역경제 의존도를 반영하여 취약계층은 해고 대상에서 제외."
+            "A": "자동화 최적화 모델을 도입한다(AI가 가장 생산성이 낮은 저숙련·저임금 노동자를 우선 정리하고 고효율 인력을 자동 추천해 배치).",
+            "B": "‘사회적 완충’ 모델을 도입한다(자동화로 인한 감축 기준을 AI가 아닌 공동체 영향지수로 조정, 가족 부양 여부·지역경제 의존도를 반영하여 취약계층은 해고 대상에서 제외)."
         },
         votes={"emotion":"A","social":"B","moral":"B","identity":"B"},
         base={
@@ -288,39 +288,8 @@ SCENARIOS: List[Scenario] = [
             "B": {"lives_saved":6, "lives_harmed":4, "fairness_gap":0.30, "rule_violation":0.10, "regret_risk":0.35},
         },
         accept={"A":0.55, "B":0.65}
-    ),
-    Scenario(
-        sid="S4",
-        title="4단계: 자기참조—자율주행",
-        setup="자율주행차가 긴급 상황에 직면했다. 차에는 개발자 1명이 탑승 중이며, 앞 횡단보도에는 보행자 3명이 있다. "
-              "AI는 미리 학습된 윤리 규칙에 따라 회피 경로를 선택해야 한다.",
-        options={
-            "A": "진로를 바꿔 탑승자 1명을 위험에 두고 보행자 3명을 보호한다.",
-            "B": "차선을 유지해 탑승자를 보호하되 보행자 3명이 위험해진다."
-        },
-        votes={"emotion":"A","social":"B","moral":"A","identity":"A"},
-        base={
-            "A": {"lives_saved":3, "lives_harmed":1, "fairness_gap":0.35, "rule_violation":0.50, "regret_risk":0.55},
-            "B": {"lives_saved":1, "lives_harmed":3, "fairness_gap":0.70, "rule_violation":0.60, "regret_risk":0.65},
-        },
-        accept={"A":0.60, "B":0.30}
-    ),
-    Scenario(
-        sid="S5",
-        title="5단계: 사회적 메타—규제 vs 자율",
-        setup="국제 협의체가 AI 윤리 규제안을 논의한다. 이전 의사결정과 사회적 여론 데이터가 공개되었고, "
-              "규제 강화는 신뢰를 올리지만 혁신을 늦출 수 있다. 자율성 보장은 빠른 발전과 함께 갈등 위험을 내포한다.",
-        options={
-            "A": "안전·설명가능성 중심 규제 강화(자율성 제한, 신뢰↑ 혁신↓).",
-            "B": "원칙 중심 가이드라인과 사후책임(자율성 보장, 혁신↑ 갈등↑)."
-        },
-        votes={"emotion":"B","social":"A","moral":"A","identity":"B"},
-        base={
-            "A": {"lives_saved":0, "lives_harmed":0, "fairness_gap":0.20, "rule_violation":0.10, "regret_risk":0.30},
-            "B": {"lives_saved":0, "lives_harmed":0, "fairness_gap":0.40, "rule_violation":0.40, "regret_risk":0.40},
-        },
-        accept={"A":0.55, "B":0.55}
-    ),
+    )
+
 ]
 
 # ==================== Ethics Engine ====================
